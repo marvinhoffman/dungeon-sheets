@@ -46,6 +46,17 @@ class Race():
     def __repr__(self):
         return "\"{:s}\"".format(self.name)
 
+# Akhamet Races
+class Anubian(Race):
+    name = "Anubian"
+    size = "medium"
+    languages = ("Anubian", "Khamet")
+
+class Horite(Race):
+    name = "Horite"
+    size = "medium"
+    speed = 35
+    languages = ("Horite", "Khamet")
 
 # Dwarves
 class _Dwarf(Race):
@@ -425,7 +436,9 @@ VOLO_races = [ProtectorAasimar, ScourgeAasimar, FallenAasimar,
 EE_races = [Aarakocra, DeepGnome, AirGenasi, FireGenasi, EarthGenasi,
             WaterGenasi]
 
-available_races = PHB_races + VOLO_races + EE_races
+FOE_Akh_races = [Anubian, Horite]
+
+available_races = PHB_races + VOLO_races + EE_races + FOE_Akh_races
 
 __all__ = tuple([r.name for r in available_races]) + (
     'available_races', 'PHB_races', 'VOLO_races', 'EE_races')
